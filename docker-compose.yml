@@ -1,0 +1,33 @@
+services:
+  app:
+    build: .
+    container_name: kino_app
+    working_dir: /var/www
+    volumes:
+      - .:/var/www
+      - ./.env.docker:/var/www/.env
+    ports:
+      - "8080:8000"
+    environment:
+      DB_CONNECTION: mysql
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_DATABASE: kino_app
+      DB_USERNAME: root
+      DB_PASSWORD: root
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    container_name: kino_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: kino_app
+    ports:
+      - "3307:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+
+volumes:
+  dbdata:
