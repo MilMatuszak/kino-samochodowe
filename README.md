@@ -73,6 +73,24 @@ php artisan serve
 
 Aplikacja będzie dostępna pod adresem `http://127.0.0.1:8000`.
 
+## Uruchomienie przez Docker (alternatywa)
+
+Projekt można uruchomić w pełni skonteneryzowany, bez instalowania PHP, MySQL ani serwera — wystarczy zainstalowany Docker.
+
+```bash
+# 1. Zbuduj i uruchom kontenery (aplikacja + baza MySQL)
+docker compose up -d --build
+
+# 2. Zainstaluj zależności i przygotuj bazę (wewnątrz kontenera)
+docker compose exec app composer install
+docker compose exec app php artisan migrate --seed
+docker compose exec app php artisan storage:link
+```
+
+Aplikacja będzie dostępna pod adresem `http://localhost:8080`, a baza danych nasłuchuje na porcie `3307`.
+
+Konfiguracja Dockera korzysta z osobnego pliku `.env.docker` (host bazy `db`), więc nie koliduje z lokalną instalacją XAMPP. Zatrzymanie kontenerów: `docker compose down`.
+
 ## Konfiguracja środowiska (.env)
 
 ```env
