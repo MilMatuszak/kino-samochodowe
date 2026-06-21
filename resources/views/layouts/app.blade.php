@@ -14,7 +14,7 @@
         @auth
             <a href="{{ route('dashboard') }}" class="text-yellow-400 font-bold text-xl tracking-wide">🎬 DriveIN Cinema</a>
         @else
-            <a href="{{ route('home') }}" class="text-yellow-400 font-bold text-xl tracking-wide">🎬 DriveIN Cinema</a>
+            <a href="{{ route('home') }}" class="text-yellow-400 font-bold text-xl tracking-wide">🎬 Cinema</a>
         @endauth
 
         <div class="flex items-center gap-6 text-sm">
