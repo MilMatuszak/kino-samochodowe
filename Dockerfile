@@ -1,3 +1,4 @@
+# rebuild trigger v2
 FROM php:8.2-cli
 
 # Zależności systemowe i rozszerzenia PHP wymagane przez Laravel
