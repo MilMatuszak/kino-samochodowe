@@ -1,4 +1,3 @@
-# rebuild trigger v2
 FROM php:8.2-cli
 
 # Zależności systemowe i rozszerzenia PHP wymagane przez Laravel
@@ -10,6 +9,12 @@ RUN apt-get update && apt-get install -y \
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www
+
+# Kopiowanie kodu aplikacji do obrazu
+COPY . .
+
+# Instalacja zależności PHP
+RUN composer install --no-dev --optimize-autoloader --no-interaction
 
 EXPOSE 8000
 
