@@ -4,6 +4,16 @@ Aplikacja webowa do kompleksowego zarządzania kinem samochodowym: planowanie re
 
 Projekt zaliczeniowy zrealizowany w ramach przedmiotu na kierunku informatyka.
 
+## 🌐 Wersja live
+
+Aplikacja jest wdrożona i dostępna online (Railway):
+
+**https://kino-samochodowe-production.up.railway.app**
+
+Konta testowe do zalogowania znajdują się w sekcji [Konta testowe](#konta-testowe) poniżej.
+
+> Uwaga: środowisko wdrożeniowe ma ograniczony, efemeryczny system plików — wgrane przez panel administracyjny plakaty filmów mogą zostać utracone po restarcie kontenera (np. po kolejnym wdrożeniu). Dane w bazie (filmy, seanse, użytkownicy, rezerwacje) pozostają trwałe.
+
 ## Stos technologiczny
 
 - **Backend:** PHP 8.2, Laravel 12
