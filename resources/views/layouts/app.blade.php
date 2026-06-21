@@ -12,9 +12,9 @@
 <nav class="bg-gray-900 border-b border-yellow-500 shadow-lg">
     <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
         @auth
-            <a href="{{ route('dashboard') }}" class="text-yellow-400 font-bold text-xl tracking-wide">🎬 Drive Cinema</a>
+            <a href="{{ route('dashboard') }}" class="text-yellow-400 font-bold text-xl tracking-wide">🎬 DriveI Cinema</a>
         @else
-            <a href="{{ route('home') }}" class="text-yellow-400 font-bold text-xl tracking-wide">🎬 Drive Cinema</a>
+            <a href="{{ route('home') }}" class="text-yellow-400 font-bold text-xl tracking-wide">🎬 DriveIN Cinema</a>
         @endauth
 
         <div class="flex items-center gap-6 text-sm">
